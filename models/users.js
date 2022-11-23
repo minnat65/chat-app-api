@@ -26,7 +26,7 @@ const User = DB.define('User', {
 // User.hasOne(ChatGroup, { foreignKey: 'creator' });
 // ChatGroup.belongsTo(User, { foreignKey: 'creator' });
 
-User.sync({ alter: true })
+User.sync({ })
   .then((res) => console.log('Syncing...', res))
   .catch((err) => console.log(err))
 

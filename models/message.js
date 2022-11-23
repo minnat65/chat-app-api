@@ -16,19 +16,11 @@ const Message = DB.define('Message', {
     type: DataTypes.INTEGER,
     allowNull: false,
     foreignKey: true,
-    // references: {
-    //   model: 'User',
-    //   key: 'id',
-    // }
   },
   chatGroup: {
     type: DataTypes.INTEGER,
     allowNull: false,
     foreignKey: true,
-    // references: {
-    //   model: 'ChatGroup',
-    //   key: 'id',
-    // }
   }
 }, {
   timestamps: true,
@@ -38,7 +30,7 @@ const Message = DB.define('Message', {
 User.hasMany(Message, { foreignKey: 'creator' });
 Message.belongsTo(User, { foreignKey: 'creator' });
 
-Message.sync({ alter: true })
+Message.sync({ })
   .then(() => {})
   .catch((err) => console.log(err));
 

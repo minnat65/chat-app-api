@@ -31,7 +31,7 @@ GroupMembers.belongsTo(User, { foreignKey: 'userId' })
 ChatGroup.hasMany(GroupMembers, { foreignKey: 'chatGroupId' });
 GroupMembers.belongsTo(ChatGroup, { foreignKey: 'chatGroupId' })
 
-GroupMembers.sync({ alter: true })
+GroupMembers.sync({})
   .then((res) => console.log('Syncing...', res))
   .catch((err) => console.log(err))
 

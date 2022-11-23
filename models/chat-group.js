@@ -24,7 +24,7 @@ ChatGroup.belongsTo(User, { foreignKey: 'creator', as: 'admin' });
 ChatGroup.hasMany(Message, { foreignKey: 'chatGroup'});
 Message.belongsTo(ChatGroup, { foreignKey: 'chatGroup'});
 
-ChatGroup.sync({ alter: true })
+ChatGroup.sync({})
   .then((res) => console.log('Syncing...', res))
   .catch((err) => console.log(err))
 

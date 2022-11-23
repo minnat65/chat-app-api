@@ -72,7 +72,13 @@ export class GroupService {
     }
 
     // Check if user already exist in the group
-    const user = await GroupMembers.findOne({ chatGroupId: groupId, userId: memberId });
+    const user = await GroupMembers.findOne({ 
+      chatGroupId: groupId,
+      where: {
+        userId: memberId
+      }
+    });
+
     if(user) {
       throw new Error('User already exist in the group');
     }
